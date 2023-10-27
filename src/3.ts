@@ -10,6 +10,7 @@
 interface ICharacter {
   name: string;
   level: number;
+  introduce(arg: string): void;
   levelUp(): void;
 }
 
