@@ -29,18 +29,12 @@ class Employee {
 }
 
 class Manager extends Employee {
-  constructor(personName: string, salary: number) {
-    super(personName, "X-Dept", salary + 10000);
+  constructor(personName: string, department: string, salary: number) {
+    super(personName, department, salary + 10000);
   }
 }
 
-const manager = new Manager("Ivan", 800);
+const manager = new Manager("Ivan", "X-Dept", 800);
 
-console.log(
-  "manager.getEmployeeDetails(): ",
-  typeof manager.getEmployeeDetails()
-);
-
-console.log("manager.getEmployeeDetails(): ", manager.getEmployeeDetails());
-
+console.log("managerInfo: ", manager.getEmployeeDetails());
 export {};

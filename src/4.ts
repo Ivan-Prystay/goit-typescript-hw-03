@@ -16,17 +16,16 @@ class Person {
 }
 
 abstract class House {
-  door: boolean;
+  door = false;
   key: Key;
   tenants: Person[] = [];
 
   constructor(key: Key) {
-    this.door = false;
     this.key = key;
   }
 
   comeIn(person: Person): void {
-    if (this.door === true) {
+    if (this.door) {
       this.tenants.push(person);
     } else {
       throw new Error("Door is closed");
@@ -37,10 +36,6 @@ abstract class House {
 }
 
 class MyHouse extends House {
-  constructor(key: Key) {
-    super(key);
-  }
-
   openDoor(key: Key): void {
     if (key.getSignature() === this.key.getSignature()) {
       this.door = true;
